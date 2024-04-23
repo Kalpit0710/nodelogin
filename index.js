@@ -10,7 +10,7 @@ import bcrypt, { hash } from 'bcrypt'
 
 
 
-mongoose.connect("mongodb://127.0.0.1:27017",
+mongoose.connect("mongodb://localhost:27017/",
 {
 dbName:"backend" ,
 }).then (()=>console.log("Database Connected"))
