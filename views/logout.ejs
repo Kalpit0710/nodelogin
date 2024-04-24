@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Login</title>
-  </head>
-  <body>
-    <h1>Hi, <%= name %></h1>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <main>
+
+    <h1 style="color: hsla(0, 0%, 65%, 1);">Hi, <%= name %>
+    </h1>
     <form action="/logout" method="get">
       <button type="submit">Logout</button>
     </form>
-  </body>
+
+    <p id="countdown-message" style="color: hsla(0, 0%, 65%, 1);">Redirecting to home in 5 seconds...</p>
+    <!-- Countdown and redirection script -->
+    <script>
+      // Initial countdown time in seconds
+      let countdown = 5;
+
+      // Function to update countdown message and redirect
+      function updateCountdown() {
+        if (countdown > 0) {
+          document.getElementById('countdown-message').textContent = `Redirecting to home in ${countdown} seconds...`;
+          countdown--;
+          setTimeout(updateCountdown, 1000); // Update every 1 second (1000 milliseconds)
+        } else {
+          console.log("Redirecting now...");
+          window.location.href = "https://jrpschool.netlify.app/"; // Redirect after countdown
+        }
+      }
+
+      // Call the function to start the countdown
+      updateCountdown();
+    </script>
+
+    <!-- Countdown message -->
+  </main>
+</body>
+
 </html>
