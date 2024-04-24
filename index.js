@@ -9,9 +9,9 @@ import bcrypt, { hash } from 'bcrypt'
 
 
 
-mongoose.connect("mongodb://localhost:27017/",
+mongoose.connect("mongodb+srv://kalpit677:ZRYwxt6GUUuHdTYh@login.7yrerl0.mongodb.net/?retryWrites=true&w=majority&appName=Login",
 {
-dbName:"backend" ,
+dbName:"Login" ,
 }).then (()=>console.log("Database Connected"))
 .catch((e)=>console.log(e));
 
